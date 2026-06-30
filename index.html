@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soulware — Software with a soul</title>
+  <meta name="description" content="Soulware builds calm, intelligent apps that help you live with more intention — starting with Ivy Relations Assistant, your personal relationship manager." />
+  <meta name="theme-color" content="#F8F6F1" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Soulware — Software with a soul" />
+  <meta property="og:description" content="Calm, intelligent apps that help you live with more intention." />
+  <meta property="og:image" content="assets/ivy-icon.png" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232C3333'/%3E%3Cstop offset='1' stop-color='%238BA888'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='url(%23g)'/%3E%3Ctext x='16' y='22' font-family='Inter,sans-serif' font-size='18' font-weight='600' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Soulware logo gradient (referenced by inline glyphs below) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="sw-grad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#2C3333" />
+        <stop offset="1" stop-color="#8BA888" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="site-nav">
+    <div class="container site-nav__inner">
+      <a class="swmark" href="#top" aria-label="Soulware home">
+        <svg class="swmark__glyph" viewBox="0 0 36 36"><rect width="36" height="36" rx="11" fill="url(#sw-grad)"/><text x="18" y="25" font-family="Inter, sans-serif" font-size="20" font-weight="600" fill="#fff" text-anchor="middle">S</text></svg>
+        <span class="swmark__name">Soulware</span>
+      </a>
+      <nav class="site-nav__links">
+        <a class="site-nav__link site-nav__link--hide" href="#product">Product</a>
+        <a class="site-nav__link site-nav__link--hide" href="#values">About</a>
+        <a class="site-nav__link" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="home-hero" id="top">
+    <div class="home-hero__bg" aria-hidden="true"></div>
+    <div class="container home-hero__inner">
+      <span class="eyebrow">Software with a soul</span>
+      <h1>Technology that helps you stay <em>human</em>.</h1>
+      <p class="home-hero__sub">Soulware builds calm, intelligent apps that help you live with more intention — quietly working in the background so you can be more present with what matters.</p>
+      <div class="home-hero__actions">
+        <a class="btn btn--primary btn--lg" href="#product">Meet our first app</a>
+        <a class="btn btn--ghost btn--lg" href="#contact">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FEATURED PRODUCT: IVY ===================== -->
+  <section class="featured" id="product">
+    <div class="container">
+      <div class="featured__card">
+        <div class="featured__body">
+          <span class="featured__eyebrow">
+            <img src="assets/ivy-icon.png" alt="Ivy Relations Assistant icon" />
+            Ivy Relations Assistant
+          </span>
+          <h2 class="featured__title">Stay close to the people who matter most.</h2>
+          <p class="featured__text">Life gets busy and relationships quietly slip. Ivy is your personal relationship assistant — it remembers the birthdays, anniversaries, and milestones, and gently nudges you to reconnect with small, thoughtful gestures.</p>
+          <ul class="featured__list">
+            <li><span class="featured__check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> A beautiful timeline of every important moment</li>
+            <li><span class="featured__check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> AI-crafted message &amp; gift ideas in seconds</li>
+            <li><span class="featured__check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Gentle, guilt-free reminders to reach out</li>
+          </ul>
+          <a class="btn btn--primary btn--lg" href="ivy-relations-assistant/">Explore Ivy Relations Assistant →</a>
+        </div>
+        <div class="featured__visual" aria-hidden="true">
+          <div class="featured__halo"></div>
+          <img class="featured__icon" src="assets/ivy-icon.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== VALUES ===================== -->
+  <section class="values" id="values">
+    <div class="container">
+      <div class="values__head">
+        <h2 class="h2">What we believe</h2>
+        <p class="lead lead--narrow">We make software that earns its place in your life — thoughtful, respectful of your attention, and built to help you, not hook you.</p>
+      </div>
+      <div class="values__grid">
+        <div class="value">
+          <div class="value__ico feature-ico--sage">
+            <svg class="ico ico--lg" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3>Human-centered</h3>
+          <p class="muted">We design for real moments and real relationships, not engagement metrics.</p>
+        </div>
+        <div class="value">
+          <div class="value__ico feature-ico--clay">
+            <svg class="ico ico--lg" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h3>Private by design</h3>
+          <p class="muted">Your data is yours. We keep it secure and never sell it — full stop.</p>
+        </div>
+        <div class="value">
+          <div class="value__ico feature-ico--sage">
+            <svg class="ico ico--lg" viewBox="0 0 24 24"><path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3L12 3z"/></svg>
+          </div>
+          <h3>Calm technology</h3>
+          <p class="muted">Our apps work quietly in the background and step in only when it helps.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="contact" id="contact">
+    <div class="container contact__inner">
+      <h2 class="h2">Let's talk</h2>
+      <p class="lead">Questions, ideas, or partnership thoughts? Send us a note and we'll get back to you.</p>
+
+      <!-- Web3Forms: replace the access_key value with your real key from https://web3forms.com (free) -->
+      <form class="contact__form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+        <input type="hidden" name="subject" value="New message from soulware.app" />
+        <input type="hidden" name="from_name" value="Soulware website" />
+        <!-- honeypot anti-spam -->
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+
+        <div class="contact__row">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" type="text" name="name" placeholder="Your name" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="you@email.com" required />
+          </div>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="How can we help?" required></textarea>
+        </div>
+        <button class="btn btn--primary btn--lg contact__submit" type="submit">Send message</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        <p class="contact__note">Or email us directly at <a href="mailto:hello@soulware.app">hello@soulware.app</a>.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a class="swmark" href="#top" aria-label="Soulware home">
+        <svg class="swmark__glyph" viewBox="0 0 36 36"><rect width="36" height="36" rx="11" fill="url(#sw-grad)"/><text x="18" y="25" font-family="Inter, sans-serif" font-size="20" font-weight="600" fill="#fff" text-anchor="middle">S</text></svg>
+        <span class="brand__name--light" style="font-size:1.25rem;font-weight:500;">Soulware</span>
+      </a>
+      <p class="footer__copy">© 2026 Soulware. Software with a soul.</p>
+      <div class="footer__links">
+        <a href="ivy-relations-assistant/">Ivy Relations Assistant</a>
+        <a href="ivy-relations-assistant/privacy.html">Privacy</a>
+        <a href="mailto:hello@soulware.app">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Submit the contact form via fetch so the visitor stays on the page.
+    (function () {
+      var form = document.getElementById('contactForm');
+      var status = document.getElementById('formStatus');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        status.className = 'form-status';
+        status.textContent = 'Sending…';
+        var data = new FormData(form);
+        fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } })
+          .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+          .then(function (res) {
+            if (res.ok) {
+              form.reset();
+              status.className = 'form-status form-status--ok';
+              status.textContent = 'Thanks! Your message has been sent.';
+            } else {
+              status.className = 'form-status form-status--err';
+              status.textContent = (res.j && res.j.message) || 'Something went wrong. Please email us instead.';
+            }
+          })
+          .catch(function () {
+            status.className = 'form-status form-status--err';
+            status.textContent = 'Network error. Please email hello@soulware.app.';
+          });
+      });
+    })();
+  </script>
+
+</body>
+</html>
