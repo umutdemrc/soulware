@@ -18,6 +18,7 @@
   --pink-a:         #FFB3BA;
   --pink-b:         #FFD4D4;
   --footer-bg:      #2C3333;
+  --font-display:   "Fraunces", "Georgia", "Times New Roman", serif;
 }
 
 * { box-sizing: border-box; }

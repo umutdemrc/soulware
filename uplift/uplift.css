@@ -49,9 +49,11 @@ img { max-width: 100%; display: block; }
 .brand { display: inline-flex; align-items: center; gap: 12px; }
 .brand__icon { width: 44px; height: 44px; border-radius: 12px; }
 .brand__icon--sm { width: 34px; height: 34px; }
+.brand__lines { display: flex; flex-direction: column; line-height: 1.15; }
 .brand__name { font-weight: 700; font-size: 1.15rem; color: var(--text); }
 .brand__name--light { color: var(--text2); font-weight: 600; }
-.brand__by { display: inline-flex; align-items: center; gap: 4px; font-size: .82rem; color: var(--muted); }
+.brand__by { font-size: .82rem; color: var(--muted); transition: color .15s ease; }
+.brand__by:hover { color: var(--text2); }
 
 .nav { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; }
 .nav__actions { display: flex; align-items: center; gap: 12px; }
