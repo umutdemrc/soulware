@@ -346,6 +346,12 @@ img { display: block; max-width: 100%; }
    company site and the product page feel like one world.
    ============================================================ */
 
+/* Editorial display face — homepage headings only, so the product
+   subpages keep their lighter Inter voice. */
+.home .h2, .home .app-card__name, .home .value h3 {
+  font-family: var(--font-display); font-weight: 500; letter-spacing: -0.015em;
+}
+
 /* ---- Sticky site nav ---- */
 .site-nav {
   position: sticky; top: 0; z-index: 50;
@@ -366,121 +372,142 @@ img { display: block; max-width: 100%; }
 .site-nav__links { display: flex; align-items: center; gap: 1.75rem; }
 .site-nav__link { color: var(--text-secondary); text-decoration: none; font-size: .95rem; transition: color .2s; }
 .site-nav__link:hover { color: var(--text); }
+.site-nav__cta { color: #fff; padding: .55rem 1.2rem; }
+.site-nav__cta:hover { color: #fff; }
 
 /* ---- Home hero ---- */
 .home-hero { position: relative; overflow: hidden; text-align: center; }
 .home-hero__bg {
   position: absolute; inset: 0; pointer-events: none;
   background:
-    radial-gradient(60rem 30rem at 50% -10%, rgba(139,168,136,.16), transparent 60%),
-    radial-gradient(40rem 24rem at 85% 10%, rgba(212,145,126,.10), transparent 60%);
+    radial-gradient(60rem 30rem at 50% -12%, rgba(139,168,136,.18), transparent 60%),
+    radial-gradient(44rem 26rem at 85% 8%, rgba(212,145,126,.12), transparent 60%),
+    radial-gradient(40rem 26rem at 12% 34%, rgba(124,77,255,.06), transparent 60%);
 }
-.home-hero__inner { position: relative; padding: 6rem 0 4.5rem; }
+.home-hero__inner { position: relative; padding: 5.5rem 0 4.5rem; }
 .eyebrow {
-  display: inline-block; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase;
+  display: inline-block; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase;
   color: var(--sage-dark, #6B8A68); font-weight: 600; margin-bottom: 1.25rem;
 }
 .home-hero h1 {
-  font-size: clamp(2.5rem, 6vw, 4.25rem); font-weight: 300; line-height: 1.08;
-  letter-spacing: -0.02em; color: var(--text); margin: 0 auto 1.5rem; max-width: 18ch;
+  font-family: var(--font-display); font-weight: 500;
+  font-size: clamp(2.75rem, 6.4vw, 4.75rem); line-height: 1.04;
+  letter-spacing: -0.015em; color: var(--text); margin: 0 auto 1.5rem; max-width: 15ch;
 }
-.home-hero h1 em { font-style: normal; color: var(--sage); }
+.home-hero h1 em { font-style: italic; color: var(--sage); }
 .home-hero__sub {
   font-size: 1.25rem; color: var(--text-secondary); line-height: 1.6;
   max-width: 40rem; margin: 0 auto 2.25rem;
 }
 .home-hero__actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
-/* ---- Featured product (Ivy) ---- */
-.featured { padding: 5rem 0; }
-.featured__card {
-  display: grid; grid-template-columns: 1.05fr .95fr; gap: 3rem; align-items: center;
-  background: #fff; border: 1px solid var(--border);
-  border-radius: 2rem; padding: 3rem;
-  box-shadow: 0 30px 60px -30px rgba(44,51,51,.18);
+/* ---- App dock (hero preview) ---- */
+.dock {
+  display: inline-flex; gap: 2.75rem; justify-content: center;
+  margin-top: 3.5rem; padding-top: 2.25rem;
+  border-top: 1px solid rgba(44,51,51,.08);
 }
-.featured__eyebrow {
-  display: inline-flex; align-items: center; gap: .5rem;
-  font-size: .85rem; color: var(--text-secondary); margin-bottom: 1rem;
+.dock__app {
+  display: inline-flex; flex-direction: column; align-items: center; gap: .65rem;
+  text-decoration: none; color: var(--text-secondary);
 }
-.featured__eyebrow img { width: 1.75rem; height: 1.75rem; }
-.featured__title { font-size: clamp(2rem,4vw,2.75rem); font-weight: 300; letter-spacing: -0.01em; color: var(--text); margin: 0 0 1rem; line-height: 1.15; }
-.featured__text { font-size: 1.0625rem; color: var(--text-secondary); line-height: 1.7; margin: 0 0 1.5rem; }
-.featured__list { list-style: none; padding: 0; margin: 0 0 2rem; display: grid; gap: .75rem; }
-.featured__list li { display: flex; align-items: flex-start; gap: .625rem; color: var(--text); font-size: 1rem; }
-.featured__check {
-  flex-shrink: 0; width: 1.4rem; height: 1.4rem; border-radius: 9999px;
-  background: linear-gradient(135deg, rgba(139,168,136,.2), rgba(139,168,136,.12));
-  color: var(--sage-dark, #6B8A68);
-  display: inline-flex; align-items: center; justify-content: center;
-}
-.featured__check svg { width: .9rem; height: .9rem; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.dock__icon-wrap { display: inline-flex; transition: transform .25s ease; }
+.dock__icon { width: 3.5rem; height: 3.5rem; object-fit: contain; filter: drop-shadow(0 10px 16px rgba(44,51,51,.18)); }
+.dock__app:hover .dock__icon-wrap { transform: translateY(-4px); }
+.dock__name { font-size: .9rem; font-weight: 500; }
+.dock__app:hover .dock__name { color: var(--text); }
 
-/* visual side: floating app icon + calendar mock */
-.featured__visual { position: relative; display: flex; align-items: center; justify-content: center; }
-.featured__halo {
-  position: absolute; width: 18rem; height: 18rem; border-radius: 9999px;
-  background: radial-gradient(circle, rgba(139,168,136,.22), transparent 65%);
-  filter: blur(6px);
-}
-.featured__icon {
-  position: relative; width: 11rem; height: 11rem; object-fit: contain;
-  filter: drop-shadow(0 20px 30px rgba(44,51,51,.18));
-}
-
-/* ---- Our Apps (multi-app grid) ---- */
-.apps { padding: 5rem 0; }
-.apps__head { text-align: center; margin-bottom: 3rem; }
-.apps__head .h2 { margin-bottom: 1rem; }
+/* ---- Our apps (branded cards) ---- */
+.apps { padding: 5.5rem 0; }
+.apps__head { text-align: center; max-width: 42rem; margin: 0 auto 3.25rem; }
+.apps__head .eyebrow { color: var(--clay); }
+.apps__head .h2 { margin: 0 0 1rem; }
 .apps__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
-  gap: 2rem;
-  max-width: 64rem; margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  gap: 1.75rem;
+  max-width: 70rem; margin: 0 auto;
 }
 .app-card {
-  display: flex; flex-direction: column; align-items: center; text-align: center;
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
   background: #fff; border: 1px solid var(--border);
-  border-radius: 1.75rem; padding: 2.5rem 2rem;
+  border-radius: 1.6rem; padding: 2rem 1.9rem 1.9rem;
   text-decoration: none; color: inherit;
-  box-shadow: 0 20px 40px -24px rgba(44,51,51,.16);
-  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  box-shadow: 0 22px 44px -28px rgba(44,51,51,.22);
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+.app-card__strip {
+  position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: var(--accent-grad, var(--accent)); opacity: .95;
 }
 .app-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 34px 60px -28px rgba(44,51,51,.28);
-  border-color: rgba(139,168,136,.4);
+  box-shadow: 0 40px 72px -34px rgba(44,51,51,.34);
+  border-color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+}
+.app-card__top {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
+  margin-bottom: 1.35rem;
+}
+.app-card__icon-wrap { position: relative; display: inline-flex; }
+.app-card__icon-wrap::before {
+  content: ""; position: absolute; inset: -26%;
+  background: var(--accent-soft); border-radius: 50%; filter: blur(16px); z-index: 0;
 }
 .app-card__icon {
-  width: 5.5rem; height: 5.5rem; object-fit: contain; margin-bottom: 1.25rem;
-  filter: drop-shadow(0 12px 20px rgba(44,51,51,.15));
+  position: relative; z-index: 1;
+  width: 4.75rem; height: 4.75rem; object-fit: contain;
+  filter: drop-shadow(0 12px 20px rgba(44,51,51,.16));
 }
-.app-card__name {
-  font-size: 1.35rem; font-weight: 500; color: var(--text);
-  margin: 0 0 .5rem; letter-spacing: -0.01em;
+.app-card__chip {
+  align-self: center;
+  font-size: .7rem; font-weight: 600; letter-spacing: .07em; text-transform: uppercase;
+  color: var(--accent); background: var(--accent-soft);
+  padding: .4rem .75rem; border-radius: 9999px; white-space: nowrap;
 }
-.app-card__tagline {
-  font-size: 1rem; color: var(--text-secondary); line-height: 1.6;
-  margin: 0 0 1.5rem; max-width: 22ch;
-}
-.app-card__link {
+.app-card__name { font-size: 1.4rem; color: var(--text); margin: 0 0 .35rem; }
+.app-card__tagline { font-size: 1.02rem; font-weight: 500; color: var(--accent); margin: 0 0 .7rem; }
+.app-card__desc { font-size: .96rem; color: var(--text-secondary); line-height: 1.62; margin: 0 0 1.6rem; }
+.app-card__cta {
   margin-top: auto;
-  display: inline-flex; align-items: center; gap: .4rem;
-  font-size: .95rem; font-weight: 500; color: var(--sage-dark, #6B8A68);
+  display: inline-flex; align-items: center; gap: .45rem;
+  font-size: .95rem; font-weight: 600; color: var(--accent); text-decoration: none;
 }
-.app-card__link span { transition: transform .25s ease; }
-.app-card:hover .app-card__link span { transform: translateX(4px); }
+.app-card__arrow { transition: transform .25s ease; }
+.app-card:hover .app-card__arrow { transform: translateX(4px); }
+
+/* Coming-soon card */
+.app-card--soon {
+  justify-content: center;
+  background: linear-gradient(160deg, #fff, var(--bg-cream));
+  border-style: dashed; box-shadow: none;
+}
+.app-card--soon:hover { transform: none; box-shadow: none; border-color: var(--border); }
+.app-card__soon-badge {
+  font-size: .7rem; font-weight: 600; letter-spacing: .07em; text-transform: uppercase;
+  color: var(--text-muted); margin-bottom: 1.35rem;
+}
+.app-card__soon-mark {
+  width: 3.25rem; height: 3.25rem; border-radius: 1rem; margin-bottom: 1rem;
+  display: flex; align-items: center; justify-content: center;
+  background: #fff; border: 1px solid var(--border); color: var(--text-muted);
+}
+.app-card__soon-mark svg { width: 1.5rem; height: 1.5rem; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linejoin: round; }
+.app-card__cta--link { color: var(--sage-dark); }
 
 /* ---- Values ---- */
-.values { padding: 4.5rem 0 5rem; }
-.values__head { text-align: center; margin-bottom: 3rem; }
-.values__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; }
+.values { padding: 5rem 0; background: linear-gradient(to bottom, #fff, var(--bg-cream)); }
+.values__head { text-align: center; max-width: 40rem; margin: 0 auto 3rem; }
+.values__head .h2 { margin: 0 0 1rem; }
+.values__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2.5rem; }
 .value { text-align: center; }
 .value__ico {
-  width: 3.25rem; height: 3.25rem; border-radius: 1rem; margin: 0 auto 1rem;
+  width: 3.5rem; height: 3.5rem; border-radius: 1rem; margin: 0 auto 1.1rem;
   display: flex; align-items: center; justify-content: center;
 }
-.value h3 { font-size: 1.25rem; font-weight: 400; color: var(--text); margin: 0 0 .5rem; }
+.value h3 { font-size: 1.2rem; color: var(--text); margin: 0 0 .5rem; }
 
 /* ---- Contact ---- */
 .contact { padding: 5rem 0; background: linear-gradient(to bottom, var(--bg-cream), var(--bg-cream-deep)); }
@@ -510,16 +537,14 @@ img { display: block; max-width: 100%; }
 .sw-tag__glyph { width: 1.1rem; height: 1.1rem; border-radius: .35rem; }
 
 @media (max-width: 880px) {
-  .featured__card { grid-template-columns: 1fr; gap: 2rem; padding: 2rem; text-align: center; }
-  .featured__list { text-align: left; max-width: 24rem; margin-left: auto; margin-right: auto; }
-  .featured__eyebrow { justify-content: center; }
-  .featured__icon { width: 8.5rem; height: 8.5rem; }
-  .featured__halo { width: 13rem; height: 13rem; }
   .values__grid { grid-template-columns: 1fr; gap: 2.25rem; max-width: 24rem; margin: 0 auto; }
 }
 @media (max-width: 640px) {
-  .site-nav__links { gap: 1rem; }
+  .site-nav__links { gap: .9rem; }
   .site-nav__link--hide { display: none; }
+  .site-nav__cta { padding: .5rem 1rem; }
   .contact__row { grid-template-columns: 1fr; }
   .home-hero__inner { padding: 3.5rem 0 3rem; }
+  .dock { gap: 2rem; margin-top: 2.5rem; }
+  .app-card { padding: 1.75rem 1.5rem; }
 }

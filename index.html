@@ -16,11 +16,11 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="home">
 
   <!-- Soulware logo gradient (referenced by inline glyphs below) -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -42,7 +42,7 @@
       <nav class="site-nav__links">
         <a class="site-nav__link site-nav__link--hide" href="#apps">Apps</a>
         <a class="site-nav__link site-nav__link--hide" href="#values">About</a>
-        <a class="site-nav__link" href="#contact">Contact</a>
+        <a class="site-nav__link btn btn--primary site-nav__cta" href="#contact">Get in touch</a>
       </nav>
     </div>
   </header>
@@ -58,6 +58,22 @@
         <a class="btn btn--primary btn--lg" href="#apps">Explore our apps</a>
         <a class="btn btn--ghost btn--lg" href="#contact">Get in touch</a>
       </div>
+
+      <!-- App dock: quick preview of the apps -->
+      <div class="dock" aria-label="Our apps">
+        <a class="dock__app" href="ivy-relations-assistant/">
+          <span class="dock__icon-wrap">
+            <img class="dock__icon" src="assets/ivy-icon.png" alt="Ivy Relations Assistant icon" />
+          </span>
+          <span class="dock__name">Ivy</span>
+        </a>
+        <a class="dock__app" href="uplift/">
+          <span class="dock__icon-wrap">
+            <img class="dock__icon" src="assets/uplift-icon.png" alt="Uplift icon" />
+          </span>
+          <span class="dock__name">Uplift</span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -65,28 +81,55 @@
   <section class="apps" id="apps">
     <div class="container">
       <div class="apps__head">
-        <h2 class="h2">Our apps</h2>
-        <p class="lead lead--narrow">A small, growing family of apps — each one crafted to help you live with a little more intention.</p>
+        <span class="eyebrow">Our apps</span>
+        <h2 class="h2">A small family, crafted with care.</h2>
+        <p class="lead lead--narrow">Each Soulware app is built to help you live with a little more intention — distinct in personality, united by the same quiet philosophy.</p>
       </div>
+
       <div class="apps__grid">
 
         <!-- App card: Ivy Relations Assistant -->
-        <a class="app-card" href="ivy-relations-assistant/">
-          <img class="app-card__icon" src="assets/ivy-icon.png" alt="Ivy Relations Assistant icon" />
+        <a class="app-card" href="ivy-relations-assistant/"
+           style="--accent:#7A9777; --accent-soft:rgba(139,168,136,.14); --accent-grad:linear-gradient(135deg,#8BA888,#D4917E);">
+          <span class="app-card__strip" aria-hidden="true"></span>
+          <div class="app-card__top">
+            <span class="app-card__icon-wrap">
+              <img class="app-card__icon" src="assets/ivy-icon.png" alt="Ivy Relations Assistant icon" />
+            </span>
+            <span class="app-card__chip">Relationships</span>
+          </div>
           <h3 class="app-card__name">Ivy Relations Assistant</h3>
           <p class="app-card__tagline">Stay close to the people who matter most.</p>
-          <span class="app-card__link">Explore <span aria-hidden="true">→</span></span>
+          <p class="app-card__desc">Ivy remembers every birthday, anniversary, and milestone — then gently nudges you to reconnect with small, thoughtful gestures.</p>
+          <span class="app-card__cta">Explore Ivy <span class="app-card__arrow" aria-hidden="true">→</span></span>
         </a>
 
         <!-- App card: Uplift -->
-        <a class="app-card" href="uplift/">
-          <img class="app-card__icon" src="assets/uplift-icon.png" alt="Uplift icon" />
+        <a class="app-card" href="uplift/"
+           style="--accent:#7C4DFF; --accent-soft:rgba(124,77,255,.12); --accent-grad:linear-gradient(135deg,#943FF9,#4AA8FF);">
+          <span class="app-card__strip" aria-hidden="true"></span>
+          <div class="app-card__top">
+            <span class="app-card__icon-wrap">
+              <img class="app-card__icon" src="assets/uplift-icon.png" alt="Uplift icon" />
+            </span>
+            <span class="app-card__chip">Motivation</span>
+          </div>
           <h3 class="app-card__name">Uplift</h3>
           <p class="app-card__tagline">Your pocket AI motivation coach.</p>
-          <span class="app-card__link">Explore <span aria-hidden="true">→</span></span>
+          <p class="app-card__desc">Motivation fades — Uplift helps you show up anyway. A coach in your corner that chats, actually calls you, and keeps your goals moving.</p>
+          <span class="app-card__cta">Explore Uplift <span class="app-card__arrow" aria-hidden="true">→</span></span>
         </a>
 
-        <!-- Add future app cards here: copy an .app-card block above. -->
+        <!-- More on the way -->
+        <div class="app-card app-card--soon" aria-hidden="true">
+          <span class="app-card__soon-badge">In the works</span>
+          <div class="app-card__soon-mark">
+            <svg viewBox="0 0 24 24"><path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3L12 3z"/></svg>
+          </div>
+          <h3 class="app-card__name">Something new</h3>
+          <p class="app-card__desc">We're always quietly working on the next calm, useful thing. Want to be first to hear?</p>
+          <a class="app-card__cta app-card__cta--link" href="#contact">Get notified <span class="app-card__arrow" aria-hidden="true">→</span></a>
+        </div>
 
       </div>
     </div>
@@ -96,8 +139,9 @@
   <section class="values" id="values">
     <div class="container">
       <div class="values__head">
-        <h2 class="h2">What we believe</h2>
-        <p class="lead lead--narrow">We make software that earns its place in your life — thoughtful, respectful of your attention, and built to help you, not hook you.</p>
+        <span class="eyebrow">What we believe</span>
+        <h2 class="h2">Made to earn its place in your life.</h2>
+        <p class="lead lead--narrow">Thoughtful, respectful of your attention, and built to help you — not to hook you.</p>
       </div>
       <div class="values__grid">
         <div class="value">
@@ -128,7 +172,8 @@
   <!-- ===================== CONTACT ===================== -->
   <section class="contact" id="contact">
     <div class="container contact__inner">
-      <h2 class="h2">Let's talk</h2>
+      <span class="eyebrow">Say hello</span>
+      <h2 class="h2">Let's talk.</h2>
       <p class="lead">Questions, ideas, or partnership thoughts? Send us a note and we'll get back to you.</p>
 
       <!-- Web3Forms: replace the access_key value with your real key from https://web3forms.com (free) -->
