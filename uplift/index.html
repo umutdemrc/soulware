@@ -4,13 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Uplift — Your pocket AI motivation coach</title>
-  <meta name="description" content="Uplift is a personal AI motivation coach that keeps you moving — chat and real voice check-in calls, gentle nudges, and goal momentum that celebrates every win." />
-  <meta name="theme-color" content="#F8F6F1" />
+  <meta name="description" content="Uplift is a personal AI motivation coach that keeps you moving — chat and voice coaching, gentle nudges, and goal momentum that celebrates every win." />
+  <meta name="theme-color" content="#080E1C" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Uplift — Your pocket AI motivation coach" />
-  <meta property="og:description" content="A coach in your corner — chat, voice check-in calls, and momentum that celebrates every win." />
+  <meta property="og:description" content="A coach in your corner — chat, voice coaching, and momentum that celebrates every win." />
   <meta property="og:image" content="../assets/uplift-icon.png" />
 
   <link rel="icon" type="image/png" href="../assets/uplift-icon.png" />
@@ -18,228 +17,104 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="uplift.css" />
 </head>
 <body>
 
   <!-- ===================== HERO ===================== -->
-  <section class="hero">
-    <div class="hero__bg" aria-hidden="true"></div>
-    <div class="container hero__inner">
-
-      <!-- Navigation -->
+  <section class="hero" id="top">
+    <div class="container">
       <nav class="nav">
-        <div class="brand">
-          <a class="brand__home" href="#top" aria-label="Uplift home">
-            <img class="brand__icon" src="../assets/uplift-icon.png" alt="Uplift app icon" />
-          </a>
-          <div class="brand__lines">
-            <a class="brand__name" href="#top">Uplift</a>
-            <a class="brand__by" href="../">
-              by Soulware
-              <svg class="brand__by-ico" viewBox="0 0 24 24" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-            </a>
-          </div>
-        </div>
+        <a class="brand" href="#top" aria-label="Uplift home">
+          <img class="brand__icon" src="../assets/uplift-icon.png" alt="Uplift app icon" />
+          <span class="brand__name">Uplift</span>
+        </a>
         <div class="nav__actions">
           <a class="btn btn--ghost" href="#contact">Contact</a>
           <a class="btn btn--primary" href="#download">
-            <svg class="ico" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             <span>Download</span>
           </a>
         </div>
       </nav>
 
-      <!-- Hero content -->
       <div class="hero__content">
         <h1 class="hero__title">Your pocket motivation coach.</h1>
         <p class="hero__subtitle">Motivation fades — Uplift helps you show up anyway. A coach in your corner that chats, actually calls you, and keeps your goals moving forward.</p>
         <a class="btn btn--primary btn--lg btn--center" href="#download">
           <span>Get Started Free</span>
-          <svg class="ico" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
+        <div class="hero__orb" aria-hidden="true"></div>
       </div>
-
     </div>
   </section>
 
   <!-- ===================== PROBLEM ===================== -->
-  <section class="section section--white">
-    <div class="container">
-      <div class="prose-center">
-        <h2 class="h2">Motivation shouldn't run out by Tuesday.</h2>
-        <p class="lead">You start the week full of intentions, and then life happens. Willpower fades, the plan slips, and the guilt makes it even harder to start again. What you really need isn't another to-do list — it's someone in your corner who keeps showing up for you.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== SOLUTION + PREVIEWS ===================== -->
-  <section class="section section--cream-fade">
-    <div class="container">
-      <div class="section__head">
-        <h2 class="h2">A coach who actually knows you.</h2>
-        <p class="lead lead--narrow">Uplift learns your goals and meets you where you are — encouraging when you're low, direct when you're ready, and always in your voice. Chat any time, or pick up a real check-in call.</p>
-      </div>
-
-      <div class="preview-grid">
-
-        <!-- Preview card 1 — Calendar / check-in schedule -->
-        <article class="preview-card">
-          <div class="preview-card__head">
-            <div class="feature-ico feature-ico--sage">
-              <svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            </div>
-            <h3 class="h3">Check-ins that fit your week.</h3>
-            <p class="muted">Schedule motivation calls when you need them most — and your coach shows up, right on time.</p>
-          </div>
-
-          <div class="mock">
-            <!-- Calendar header -->
-            <div class="cal__header">
-              <button class="cal__nav" aria-label="Previous weeks">
-                <svg class="ico ico--sm" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
-              </button>
-              <h4 class="cal__month">July 2026</h4>
-              <button class="cal__nav" aria-label="Next weeks">
-                <svg class="ico ico--sm" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
-              </button>
-            </div>
-
-            <!-- Week 1 -->
-            <div class="cal__week">
-              <div class="cal__cell"><span class="cal__dow">Sun</span><div class="cal__day"><span class="cal__num">28</span></div></div>
-              <div class="cal__cell"><span class="cal__dow">Mon</span><div class="cal__day cal__day--active"><span class="cal__num cal__num--on">29</span><span class="cal__dot"></span></div></div>
-              <div class="cal__cell"><span class="cal__dow">Tue</span><div class="cal__day"><span class="cal__num">30</span></div></div>
-              <div class="cal__cell"><span class="cal__dow">Wed</span><div class="cal__day cal__day--active"><span class="cal__num cal__num--on">1</span><span class="cal__dot"></span></div></div>
-              <div class="cal__cell"><span class="cal__dow">Thu</span><div class="cal__day"><span class="cal__num">2</span></div></div>
-              <div class="cal__cell"><span class="cal__dow">Fri</span><div class="cal__day"><span class="cal__num">3</span></div></div>
-              <div class="cal__cell"><span class="cal__dow">Sat</span><div class="cal__day"><span class="cal__num">4</span></div></div>
-            </div>
-
-            <!-- Week 2 -->
-            <div class="cal__week">
-              <div class="cal__cell"><span class="cal__dow">Sun</span><div class="cal__day"><span class="cal__num">5</span></div></div>
-              <div class="cal__cell"><span class="cal__dow">Mon</span><div class="cal__day cal__day--dashed"><span class="cal__num cal__num--mut">6</span></div></div>
-              <div class="cal__cell"><span class="cal__dow">Tue</span><div class="cal__day"><span class="cal__num">7</span></div></div>
-              <div class="cal__cell"><span class="cal__dow">Wed</span><div class="cal__day cal__day--active"><span class="cal__num cal__num--on">8</span><span class="cal__dot"></span></div></div>
-              <div class="cal__cell"><span class="cal__dow">Thu</span><div class="cal__day"><span class="cal__num">9</span></div></div>
-              <div class="cal__cell"><span class="cal__dow">Fri</span><div class="cal__day"><span class="cal__num">10</span></div></div>
-              <div class="cal__cell"><span class="cal__dow">Sat</span><div class="cal__day"><span class="cal__num">11</span></div></div>
-            </div>
-
-            <!-- Upcoming check-ins -->
-            <div class="event-list">
-              <div class="event">
-                <div class="event__avatar event__avatar--pink">☀️</div>
-                <div class="event__body">
-                  <p class="event__name">Morning pep talk</p>
-                  <p class="event__meta">Today • 8:00 AM</p>
-                </div>
-              </div>
-              <div class="event">
-                <div class="event__avatar event__avatar--pink">🌙</div>
-                <div class="event__body">
-                  <p class="event__name">Evening check-in call</p>
-                  <p class="event__meta">Today • 6:30 PM</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Preview card 2 — Coaching chat -->
-        <article class="preview-card">
-          <div class="preview-card__head">
-            <div class="feature-ico feature-ico--clay">
-              <svg class="ico" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-            </div>
-            <h3 class="h3">A pep talk whenever you need one.</h3>
-            <p class="muted">Talk it out and your coach meets the moment — support when you're stuck, a push when you're ready.</p>
-          </div>
-
-          <div class="mock">
-            <div class="chat">
-              <div class="chat__bubble">
-                <p class="chat__text">Good morning! ☀️ Let's make today count — what's one thing you want to focus on?</p>
-                <div class="chat__actions">
-                  <button class="pill pill--outline">Set today's goal 🎯</button>
-                  <button class="pill pill--outline">Pep talk 💥</button>
-                </div>
-              </div>
-
-              <div class="chat__bubble">
-                <div class="chat__row">
-                  <div class="chat__avatar">🔥</div>
-                  <p class="chat__label">Worth celebrating</p>
-                </div>
-                <p class="chat__sub">You just pushed "Run a 5k" up to Hot — that's earned!</p>
-                <div class="chat__actions">
-                  <button class="pill pill--sage">Keep going</button>
-                  <button class="pill pill--sage-outline">Log a win</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-      </div>
+  <section class="section section--tight">
+    <div class="container prose-center">
+      <h2 class="h2">Motivation shouldn't run out by Tuesday.</h2>
+      <p class="lead">You start the week full of intentions, and then life happens. Willpower fades, the plan slips, and the guilt makes it even harder to start again. What you really need isn't another to-do list — it's someone in your corner who keeps showing up for you.</p>
     </div>
   </section>
 
   <!-- ===================== FEATURES ===================== -->
-  <section class="section section--white">
+  <section class="section">
     <div class="container">
-      <h2 class="h2 h2--center features__title">Everything you need to keep going.</h2>
+      <div class="section__head">
+        <h2 class="h2">Everything you need to keep going.</h2>
+        <p class="lead lead--narrow">A coach who learns your goals and meets you where you are — encouraging when you're low, direct when you're ready.</p>
+      </div>
 
       <div class="features">
         <div class="feature">
-          <div class="feature-ico feature-ico--sage feature-ico--lg">
-            <svg class="ico ico--lg" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          <div class="feature-ico">
+            <svg class="ico" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
           </div>
           <h3 class="feature__title">Personal AI Coach</h3>
-          <p class="muted">A coach that learns your goals and adapts — gentle when you're low, direct when you're ready to move.</p>
+          <p>A coach that learns your goals and adapts — gentle when you're low, direct when you're ready to move.</p>
         </div>
 
         <div class="feature">
-          <div class="feature-ico feature-ico--clay feature-ico--lg">
-            <svg class="ico ico--lg" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <div class="feature-ico">
+            <svg class="ico" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           </div>
-          <h3 class="feature__title">Voice Check-in Calls</h3>
-          <p class="muted">Your coach calls you at the times you choose for a quick, real spoken pep talk — not just another notification.</p>
+          <h3 class="feature__title">Voice Coaching</h3>
+          <p>Talk to your coach out loud — on demand, or let it call you at the times you choose for a real spoken pep talk.</p>
         </div>
 
         <div class="feature">
-          <div class="feature-ico feature-ico--sage feature-ico--lg">
-            <svg class="ico ico--lg" viewBox="0 0 24 24"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg>
+          <div class="feature-ico">
+            <svg class="ico" viewBox="0 0 24 24"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg>
           </div>
           <h3 class="feature__title">Goal Momentum</h3>
-          <p class="muted">Watch your goals gain momentum on your Journey — no streaks to break, no guilt, just forward motion.</p>
+          <p>Watch your goals gain momentum on your Journey — no streaks to break, no guilt, just forward motion.</p>
         </div>
 
         <div class="feature">
-          <div class="feature-ico feature-ico--clay feature-ico--lg">
-            <svg class="ico ico--lg" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <div class="feature-ico">
+            <svg class="ico" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
           </div>
           <h3 class="feature__title">Smart Nudges</h3>
-          <p class="muted">Gentle, well-timed notifications that keep you moving through the day — encouragement, never nagging.</p>
+          <p>Gentle, well-timed notifications that keep you moving through the day — encouragement, never nagging.</p>
         </div>
 
         <div class="feature">
-          <div class="feature-ico feature-ico--sage feature-ico--lg">
-            <svg class="ico ico--lg" viewBox="0 0 24 24"><path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3L12 3z"/></svg>
+          <div class="feature-ico">
+            <svg class="ico" viewBox="0 0 24 24"><path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3L12 3z"/></svg>
           </div>
           <h3 class="feature__title">Celebrates Your Wins</h3>
-          <p class="muted">The coach notices real progress and celebrates it — because earned wins deserve a genuine moment.</p>
+          <p>The coach notices real progress and celebrates it — because earned wins deserve a genuine moment.</p>
         </div>
 
         <div class="feature">
-          <div class="feature-ico feature-ico--clay feature-ico--lg">
-            <svg class="ico ico--lg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <div class="feature-ico">
+            <svg class="ico" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
           <h3 class="feature__title">Private by Design</h3>
-          <p class="muted">Your goals and conversations stay on your device. No account required — just you and your coach.</p>
+          <p>Your goals and conversations stay on your device. No account required — just you and your coach.</p>
         </div>
       </div>
     </div>
@@ -247,12 +122,12 @@
 
   <!-- ===================== CTA ===================== -->
   <section class="cta" id="download">
-    <div class="container cta__inner">
+    <div class="cta__inner">
       <h2 class="h2 cta__title">Start showing up for yourself today.</h2>
       <p class="cta__sub">Your coach is ready whenever you are.</p>
       <div class="cta__actions">
         <a class="btn btn--white btn--lg" href="#download">
-          <svg class="ico" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           <span>Download for iOS</span>
         </a>
         <a class="btn btn--glass btn--lg" href="#contact">Contact Us</a>
@@ -263,17 +138,11 @@
   <!-- ===================== FOOTER ===================== -->
   <footer class="footer" id="contact">
     <div class="container footer__inner">
-      <a class="brand brand--footer" href="#top" aria-label="Uplift home">
+      <a class="brand" href="#top" aria-label="Uplift home">
         <img class="brand__icon brand__icon--sm" src="../assets/uplift-icon.png" alt="Uplift app icon" />
         <span class="brand__name brand__name--light">Uplift</span>
       </a>
-      <p class="footer__copy">
-        © 2026 Uplift ·
-        <a class="sw-tag" href="../">
-          <svg class="sw-tag__glyph" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-grad-uplift" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8BA888"/><stop offset="1" stop-color="#D4917E"/></linearGradient></defs><rect width="36" height="36" rx="11" fill="url(#sw-grad-uplift)"/><text x="18" y="25" font-family="Inter, sans-serif" font-size="20" font-weight="600" fill="#fff" text-anchor="middle">S</text></svg>
-          a Soulware app
-        </a>
-      </p>
+      <p class="footer__copy">© 2026 Uplift · <a href="../">a Soulware app</a></p>
       <div class="footer__links">
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
