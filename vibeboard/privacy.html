@@ -52,7 +52,7 @@
         <p>When you generate or edit a board, the App transmits your <strong>idea/prompt text and any images you add</strong> to third-party AI providers to produce the requested content. This is described in “<a href="#ai">How the AI feature works</a>” below. This content is used only to fulfill your request and is <strong>not used to train models</strong>.</p>
 
         <h3>Purchases and subscriptions</h3>
-        <p>Vibeboard offers a free tier and an optional paid subscription (Pro) that unlocks more AI images, unlimited generation, and premium visuals. Purchases are handled by <strong>Apple</strong> through the App Store. We may receive confirmation of your purchase and subscription status, but we <strong>never receive or store your card details</strong> — Apple handles payment under its own terms.</p>
+        <p>Vibeboard offers a free tier and an optional paid subscription (Pro) that unlocks more AI images, unlimited generation, and premium visuals. Purchases are handled by <strong>Apple</strong> through the App Store, and we use <strong>RevenueCat</strong> to manage subscriptions and confirm your Pro status. We may receive confirmation of your purchase and subscription status, but we <strong>never receive or store your card details</strong> — Apple handles payment under its own terms.</p>
 
         <h3>Diagnostics and analytics</h3>
         <p>To keep the App reliable and improve it, we use <strong>Sentry</strong> (crash and error diagnostics) and <strong>Mixpanel</strong> (product analytics). These collect limited technical information such as app version, device model, operating-system version, and general usage events. This data is <strong>not linked to your identity</strong> and is <strong>not used for advertising</strong>.</p>
@@ -82,6 +82,7 @@
           <li><strong>Anthropic</strong> (Claude) — processes your prompt text to generate board structure and text.</li>
           <li><strong>OpenAI</strong> — generates images from your prompts and any images you add.</li>
           <li><strong>Apple</strong> — processes purchases and subscriptions through the App Store.</li>
+          <li><strong>RevenueCat</strong> — manages our subscriptions and validates your purchase status. It receives your anonymous app user id and non-identifying purchase events; it does not receive your card details.</li>
           <li><strong>Cloudflare</strong> — hosts the secure proxy that routes requests to the AI providers.</li>
           <li><strong>Sentry</strong> and <strong>Mixpanel</strong> — receive limited, non-identifying diagnostic and usage data to help us keep the App stable and useful.</li>
         </ul>
