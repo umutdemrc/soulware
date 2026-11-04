@@ -468,6 +468,7 @@ img { display: block; max-width: 100%; }
   padding: .4rem .75rem; border-radius: 9999px; white-space: nowrap;
 }
 .app-card__name { font-size: 1.4rem; color: var(--text); margin: 0 0 .35rem; }
+.app-card__store { font-size: .88rem; font-weight: 600; color: var(--text-secondary); white-space: nowrap; }
 .app-card__tagline { font-size: 1.02rem; font-weight: 500; color: var(--accent); margin: 0 0 .7rem; }
 .app-card__desc { font-size: .96rem; color: var(--text-secondary); line-height: 1.62; margin: 0 0 1.6rem; }
 .app-card__cta {

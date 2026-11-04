@@ -82,6 +82,10 @@ img { max-width: 100%; display: block; }
 /* ---------- Hero ---------- */
 .hero { position: relative; padding-bottom: 40px; }
 .hero__content { max-width: 780px; margin: 60px auto 0; text-align: center; }
+.hero__eyebrow {
+  text-transform: uppercase; letter-spacing: .28em; font-size: .8rem; font-weight: 600;
+  color: #b99bff; margin: 0 0 14px;
+}
 .hero__title {
   font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 700; line-height: 1.05; margin: 0 0 18px;
   letter-spacing: -0.03em;
@@ -121,6 +125,28 @@ img { max-width: 100%; display: block; }
 .feature-ico .ico { width: 26px; height: 26px; stroke: #fff; fill: none; }
 .feature__title { font-size: 1.15rem; font-weight: 600; margin: 0 0 8px; }
 .feature p { color: var(--text2); margin: 0; font-size: .98rem; }
+
+/* ---------- Use cases (the app's goal templates) ---------- */
+.usecases { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 42px; }
+@media (min-width: 720px)  { .usecases { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1000px) { .usecases { grid-template-columns: repeat(5, 1fr); } }
+.usecase {
+  background: var(--card); border: 1px solid var(--border-2); border-radius: var(--radius);
+  padding: 24px 22px; display: flex; flex-direction: column; align-items: flex-start;
+  transition: transform .18s ease, border-color .2s ease, background .2s ease;
+}
+.usecase:hover { transform: translateY(-4px); border-color: rgba(148,63,249,.5); background: var(--card-2); }
+.usecase__emoji { font-size: 2rem; line-height: 1; margin-bottom: 14px; }
+.usecase__title { font-size: 1.12rem; font-weight: 600; margin: 0 0 6px; }
+.usecase__sub { color: var(--text2); font-size: .95rem; margin: 0 0 18px; }
+.usecase__call {
+  margin-top: auto; display: inline-flex; align-items: center; gap: 7px;
+  font-size: .8rem; font-weight: 600; color: #cbb6ff;
+  background: rgba(148,63,249,.12); border: 1px solid rgba(148,63,249,.28);
+  padding: 6px 12px; border-radius: 999px;
+}
+.usecase__call .ico { width: 14px; height: 14px; stroke: currentColor; fill: none; }
+.usecases__foot { text-align: center; color: var(--muted); font-size: .98rem; margin: 28px auto 0; max-width: 560px; }
 
 /* ---------- CTA band ---------- */
 .cta { position: relative; margin: 30px auto 80px; max-width: var(--wrap); }
