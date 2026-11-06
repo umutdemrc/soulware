@@ -26,7 +26,7 @@
     <div class="container">
       <div class="legal__doc">
         <h1>Privacy Policy</h1>
-        <p class="legal__updated">Last updated: July 6, 2026 · Effective: July 6, 2026</p>
+        <p class="legal__updated">Last updated: November 6, 2026 · Effective: November 6, 2026</p>
 
         <div class="legal__note">
           <strong>Before you publish:</strong> this policy is written to be accurate and App-Store-ready. Please confirm the described data flows match the shipping build and have it reviewed by a legal professional for your jurisdiction. It must also match the “App Privacy” details you enter in App Store Connect.
@@ -40,7 +40,8 @@
           <li>The App does <strong>not</strong> require an account or sign-in.</li>
           <li>To provide coaching, the messages you send and the goal context you share are sent to a <strong>third-party AI provider (Anthropic)</strong> to generate the coach’s replies. If you start a <strong>voice call</strong>, your microphone audio is streamed to a <strong>voice AI provider (ElevenLabs)</strong> to power the spoken conversation.</li>
           <li>We use <strong>analytics and crash-reporting</strong> services (Mixpanel and Sentry) to keep the App reliable and understand which features help.</li>
-          <li>We <strong>do not sell</strong> your personal information, and we don’t use it to advertise to you.</li>
+          <li>To measure which of our ads bring people to the App, we use <strong>AppsFlyer</strong>. If you allow tracking when the App asks, AppsFlyer and the ad networks we work with can link your install to the ad you saw. Your goals and conversations are never shared with them.</li>
+          <li>We <strong>do not sell</strong> your personal information.</li>
           <li>You can delete your data at any time inside the App, and deleting the App removes the data stored on your device.</li>
         </ul>
 
@@ -50,7 +51,7 @@
         <p>The App lets you set goals and focus areas, log progress and wins, and chat with your coach. This may include the goals you choose, the messages you write, check-in responses, and progress you record. You choose what to enter, and this information is stored on your device.</p>
 
         <h3>Voice conversations (microphone)</h3>
-        <p>If you start a voice coaching session, the App uses your <strong>microphone</strong> and streams your audio to our voice AI provider (ElevenLabs) so the coach can hear you and respond in real time. The microphone is used only during an active call. We do not record and store your voice conversations on our own servers.</p>
+        <p>If you start a voice coaching session, the App uses your <strong>microphone</strong> and streams your audio to our voice AI provider (ElevenLabs) so the coach can hear you and respond in real time. The microphone is used only during an active call. Your voice is not recorded or kept: the audio is processed live and discarded. A text transcript of the call is kept by ElevenLabs for up to 30 days and then deleted, and a copy stays on your device so the coach can follow up on the call.</p>
 
         <h3>Content you submit to AI features</h3>
         <p>When you chat with the coach, the text needed to answer — your messages and relevant goal context — is sent over a secure connection to our backend and on to a third-party AI provider (Anthropic) to generate a response. See “<a href="#ai">How the AI features work</a>” below.</p>
@@ -61,8 +62,11 @@
         <h3>Usage and diagnostic data</h3>
         <p>To keep the App reliable and improve it, we use analytics and crash-reporting tools — <strong>Mixpanel</strong> (usage events, such as which features are used) and <strong>Sentry</strong> (crash and error logs) — that collect limited technical information such as app version, device model, operating-system version, and general usage events. This data is used in aggregate and is not used to identify you personally.</p>
 
+        <h3>Advertising measurement (AppsFlyer)</h3>
+        <p>We advertise the App and use <strong>AppsFlyer</strong>, a mobile measurement service, to learn which ads lead to installs and subscriptions. AppsFlyer receives technical information such as your device type, operating-system version, IP address, an app-specific identifier, and a few in-app milestones (for example, finishing setup, answering a call, starting a trial or subscribing, including the subscription’s price). If you choose <strong>Allow</strong> when the App asks for permission to track, AppsFlyer also receives your device’s advertising identifier (IDFA), and the ad networks we run ads with (such as Meta, TikTok, Google, or Apple Search Ads) can match your install to their ad. If you choose <strong>Ask App Not to Track</strong>, the advertising identifier is not shared and attribution relies on Apple’s privacy-preserving reporting. AppsFlyer never receives your goals, the messages you write, or your conversations with the coach.</p>
+
         <h3>What we do not collect</h3>
-        <p>We do not access your Contacts, we do not collect your precise location, we do not sell your information, and we do not use your data to serve advertising.</p>
+        <p>We do not access your Contacts, we do not collect your precise location, we do not sell your information, and we never share your goals or conversations with advertisers.</p>
 
         <h2>3. How we use information</h2>
         <ul>
@@ -84,6 +88,7 @@
           <li><strong>ElevenLabs</strong> — processes your microphone audio during a voice call to power the spoken conversation.</li>
           <li><strong>Cloudflare</strong> — hosts our lightweight backend that routes requests to the AI providers.</li>
           <li><strong>Mixpanel</strong> and <strong>Sentry</strong> — receive limited diagnostic and usage data to help us keep the App stable and useful.</li>
+          <li><strong>AppsFlyer</strong> and the ad networks we advertise with — receive the advertising-measurement data described above, and the advertising identifier only if you allow tracking.</li>
           <li><strong>RevenueCat</strong> and <strong>Apple</strong> — process and manage purchases/subscriptions and deliver notifications.</li>
         </ul>
         <p>We may also disclose information if required by law, to enforce our Terms, or to protect the rights, safety, and security of our users or the public.</p>
@@ -95,6 +100,7 @@
         <ul>
           <li><strong>Microphone</strong> — requested when you start a voice coaching session, used only during the call.</li>
           <li><strong>Notifications</strong> — requested so the App can send the nudges and scheduled motivation calls you set up.</li>
+          <li><strong>Tracking</strong> — Apple’s App Tracking Transparency prompt, shown once during setup. Allowing it lets us measure which ads brought you to the App; declining doesn’t change anything else in the App.</li>
         </ul>
         <p>You can change or revoke these permissions at any time in your device’s Settings.</p>
 
@@ -105,7 +111,7 @@
         <p>Depending on where you live, you may have rights over your personal data, including the right to access, correct, delete, or restrict its use, to object to certain processing, and to data portability.</p>
         <ul>
           <li><strong>EEA / UK (GDPR):</strong> you may exercise the rights above and lodge a complaint with your local data-protection authority. Because most data stays on your device, you control much of it directly within the App.</li>
-          <li><strong>California (CCPA/CPRA):</strong> you have the right to know what personal information is collected, to request deletion, and to not be discriminated against for exercising your rights. We do not sell or “share” personal information as those terms are defined under California law.</li>
+          <li><strong>California (CCPA/CPRA):</strong> you have the right to know what personal information is collected, to request deletion, and to not be discriminated against for exercising your rights. We do not sell personal information. If you allow tracking, sharing your advertising identifier with ad networks to measure our ads may count as “sharing” under California law; you can opt out at any time by turning off <em>Allow Apps to Request to Track</em> (or tracking for Uplift) in your iPhone’s Settings → Privacy &amp; Security → Tracking.</li>
         </ul>
         <p>To make a request, contact <a href="mailto:hello@soulware.app">hello@soulware.app</a>. We may need to verify your request.</p>
 
@@ -119,7 +125,7 @@
         <p>Our service providers (such as the AI, analytics, and hosting providers) may process data in countries outside your own, including the United States. Where required, we rely on appropriate safeguards for such transfers.</p>
 
         <h2>13. Tracking</h2>
-        <p>We do not track you across other companies’ apps and websites for advertising purposes, and we do not use an advertising identifier for that purpose.</p>
+        <p>The App asks for your permission before tracking, using Apple’s App Tracking Transparency prompt. Only if you choose <strong>Allow</strong> do we (through AppsFlyer) use your device’s advertising identifier, and only to measure which ads brought you to the App and what they led to — not to show you ads inside the App. You can change your choice at any time in Settings → Privacy &amp; Security → Tracking.</p>
 
         <h2>14. Changes to this policy</h2>
         <p>We may update this policy from time to time. When we make material changes, we will update the “Last updated” date above and, where appropriate, provide additional notice. Your continued use of the App after an update means you accept the revised policy.</p>
