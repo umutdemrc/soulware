@@ -1,8 +1,11 @@
 /* Soulware partner space: one private page per influencer.
    Built around ONE card: what the influencer should do now. Nothing else competes for attention.
    Stages: 1 Call · 2 Test · 3 Sign · 4 Launch (set window.SPACE.stage in the page).
-   Once a test exists, the page also loads ../../w/<slug>/config.js so results show real labels. */
-(function () {
+   Once a test exists, the page also loads ../../w/<slug>/config.js so results show real labels.
+   Live: on load the page asks the sheet (Apps Script ?action=space&id=) for this partner's current
+   step, test page and plan, so moving a partner on the board moves their page. If the sheet can't
+   be reached within a few seconds, the values written in the page are used. */
+function bootSpace() {
   var S = window.SPACE || {};
   var W = window.WAITLIST || null;
   var lang = S.lang === "tr" ? "tr" : "en";
@@ -276,4 +279,33 @@
   }
 
   show();
+}
+
+(function () {
+  var S = window.SPACE || {};
+  var done = false;
+  function start() { if (done) return; done = true; bootSpace(); }
+  function loadTest(slug, then) {
+    if (!slug || (window.WAITLIST && window.WAITLIST.slug === slug)) return then();
+    var sc = document.createElement("script");
+    sc.src = "../../w/" + encodeURIComponent(slug) + "/config.js";
+    sc.onload = sc.onerror = then;
+    document.head.appendChild(sc);
+  }
+  if (!S.endpoint || !S.id || /^PASTE|template/.test(S.endpoint + S.id)) return start();
+  setTimeout(start, 4000);  // the sheet is slow or unreachable: show what the page knows
+  fetch(S.endpoint + "?action=space&id=" + encodeURIComponent(S.id))
+    .then(function (r) { return r.json(); })
+    .then(function (live) {
+      if (done || !live || !live.found) return start();
+      if (live.stage) S.stage = live.stage;
+      if (live.signed) S.signed = live.signed;
+      if (live.testSlug) S.testSlug = live.testSlug;
+      if (live.plan) {
+        S.plan = S.plan || {};
+        Object.keys(live.plan).forEach(function (k) { if (live.plan[k]) S.plan[k] = live.plan[k]; });
+      }
+      loadTest(S.testSlug, start);
+    })
+    .catch(start);
 })();
