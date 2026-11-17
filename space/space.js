@@ -22,7 +22,7 @@ function bootSpace() {
       hello: "Hi {p}, let's build your app together.",
       deal: ["50/50 net profit", "No cost to you", "Your name stays yours"],
       tabNow: "Next step", tabResults: "Results", tabAgreement: "Agreement",
-      callTitle: "Book our 30-minute call",
+      callTitle: "Book our 20-minute call",
       callSub: "Pick any time that suits you. You'll get a Google Meet link by email.",
       callOpen: "Open the calendar in a new tab",
       qTitle: "Have a minute? Three quick questions (optional)",
@@ -68,7 +68,7 @@ function bootSpace() {
       hello: "Merhaba {p}, uygulamanızı birlikte geliştirelim.",
       deal: ["Net kârın %50'si", "Size hiçbir maliyeti yok", "Adınız sizde kalır"],
       tabNow: "Sıradaki adım", tabResults: "Sonuçlar", tabAgreement: "Sözleşme",
-      callTitle: "30 dakikalık görüşmemizi planlayın",
+      callTitle: "20 dakikalık görüşmemizi planlayın",
       callSub: "Size uygun herhangi bir saati seçin. Google Meet bağlantısı e-postanıza gelir.",
       callOpen: "Takvimi yeni sekmede aç",
       qTitle: "Bir dakikanız var mı? Üç kısa soru (isteğe bağlı)",
@@ -171,7 +171,7 @@ function bootSpace() {
 
   function viewCall() {
     var at = callTime();
-    if (at && Date.now() > at.getTime() + 45 * 60000) return card(T.afterTitle, T.afterSub, "") + termsFold();
+    if (at && Date.now() > at.getTime() + 30 * 60000) return card(T.afterTitle, T.afterSub, "") + termsFold();
     var booking = S.bookingUrl
       ? '<div class="sp-booking"><iframe src="' + esc(S.bookingUrl) + '" title="' + esc(T.callTitle) + '" loading="lazy"></iframe></div>' +
         '<p class="sp-small"><a href="' + esc(S.bookingUrl.replace("?gv=true", "")) + '" target="_blank" rel="noopener">' + esc(T.callOpen) + "</a></p>"
