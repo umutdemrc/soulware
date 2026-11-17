@@ -4,7 +4,10 @@
    Once a test exists, the page also loads ../../w/<slug>/config.js so results show real labels.
    Live: on load the page asks the sheet (Apps Script ?action=space&id=) for this partner's current
    step, test page and plan, so moving a partner on the board moves their page. If the sheet can't
-   be reached within a few seconds, the values written in the page are used. */
+   be reached within a few seconds, the values written in the page are used.
+   Step 1 changes by itself once the call is booked (sheet column "call"): booked time in the
+   partner's own time zone, then "thanks, we're preparing your ideas" after it. The draft terms
+   are readable from step 1 on. */
 function bootSpace() {
   var S = window.SPACE || {};
   var W = window.WAITLIST || null;
@@ -28,6 +31,12 @@ function bootSpace() {
       qSend: "Send",
       qNeed: "Answer at least one, or skip it. We'll ask on the call.",
       qDone: "Thanks, got it.",
+      bookedTitle: "Your call is booked",
+      bookedSub: "{t} (your time) on Google Meet. The link is in your calendar invite.",
+      bookedChange: "Need another time? Email umut@soulware.app.",
+      afterTitle: "Thanks for the call",
+      afterSub: "We're preparing your app ideas and your test page. You'll hear from Umut within 2–3 days.",
+      termsEarly: "Read the partnership terms",
       testTitle: "Post this link in your story",
       testSub: "Your followers answer three quick questions. Their answers decide what we build.",
       storyText: "\"I'm building an app for you. Help me decide what it does!\"",
@@ -68,6 +77,12 @@ function bootSpace() {
       qSend: "Gönder",
       qNeed: "En az birini yanıtlayın ya da atlayın; görüşmede sorarız.",
       qDone: "Teşekkürler, aldık.",
+      bookedTitle: "Görüşmemiz planlandı",
+      bookedSub: "{t} (sizin saatinizle), Google Meet'te. Bağlantı takvim davetinizde.",
+      bookedChange: "Başka bir saat mi gerekiyor? umut@soulware.app adresine yazın.",
+      afterTitle: "Görüşme için teşekkürler",
+      afterSub: "Uygulama fikirlerinizi ve test sayfanızı hazırlıyoruz. Umut 2–3 gün içinde size yazacak.",
+      termsEarly: "Ortaklık şartlarını okuyun",
       testTitle: "Bu bağlantıyı hikâyenizde paylaşın",
       testSub: "Takipçileriniz üç kısa soruyu yanıtlıyor. Ne geliştireceğimize onların cevapları karar veriyor.",
       storyText: "\"Sizin için bir uygulama geliştiriyorum. Ne yapacağına birlikte karar verelim!\"",
@@ -138,7 +153,25 @@ function bootSpace() {
     return card(T.launchTitle, T.launchSub, "");
   }
 
+  // the booked call, shown in the partner's own time zone
+  function callTime() {
+    var at = S.callAt ? new Date(S.callAt) : null;
+    return at && !isNaN(at.getTime()) ? at : null;
+  }
+  function when(at) {
+    var nav = navigator.language || "";
+    var loc = lang === "tr" ? "tr-TR" : (/^en/i.test(nav) ? nav : "en-US");
+    return at.toLocaleString(loc, { weekday: "long", day: "numeric", month: "long", hour: "numeric", minute: "2-digit" });
+  }
+
+  // the draft terms, readable before the Sign step
+  function termsFold() {
+    return '<details class="sp-extra sp-fold sp-terms-early"><summary>' + esc(T.termsEarly) + '</summary><div class="legal__doc" id="spTerms"></div></details>';
+  }
+
   function viewCall() {
+    var at = callTime();
+    if (at && Date.now() > at.getTime() + 45 * 60000) return card(T.afterTitle, T.afterSub, "") + termsFold();
     var booking = S.bookingUrl
       ? '<div class="sp-booking"><iframe src="' + esc(S.bookingUrl) + '" title="' + esc(T.callTitle) + '" loading="lazy"></iframe></div>' +
         '<p class="sp-small"><a href="' + esc(S.bookingUrl.replace("?gv=true", "")) + '" target="_blank" rel="noopener">' + esc(T.callOpen) + "</a></p>"
@@ -150,15 +183,19 @@ function bootSpace() {
         }).join("") +
         '<button type="button" class="btn btn--primary" id="spQSend">' + esc(T.qSend) + "</button>" +
         '<p class="sp-status" id="spQStatus" role="status" aria-live="polite"></p></div>';
-    return card(T.callTitle, T.callSub, booking) +
-      '<details class="sp-extra sp-fold"' + (store.get("intake") ? "" : "") + '><summary>' + esc(T.qTitle) + '</summary><p class="sp-muted">' + esc(T.qSub) + "</p>" + qs + "</details>";
+    var top = at
+      ? card(T.bookedTitle, fill(T.bookedSub, { t: when(at) }), '<p class="sp-small">' + esc(T.bookedChange) + "</p>")
+      : card(T.callTitle, T.callSub, booking);
+    return top +
+      '<details class="sp-extra sp-fold"><summary>' + esc(T.qTitle) + '</summary><p class="sp-muted">' + esc(T.qSub) + "</p>" + qs + "</details>" +
+      termsFold();
   }
 
   function viewTest() {
     var url = "https://soulware.app/w/" + S.testSlug + "/?src=story";
     return card(T.testTitle, T.testSub,
       '<div class="sp-link"><code id="spLink">' + esc(url) + '</code><button type="button" class="btn btn--primary" id="spCopy">' + esc(T.copy) + "</button></div>" +
-      '<p class="sp-quote">' + esc(T.storyText) + "</p>") + resultsBlock();
+      '<p class="sp-quote">' + esc(T.storyText) + "</p>") + resultsBlock() + termsFold();
   }
 
   function planTable() {
@@ -235,7 +272,7 @@ function bootSpace() {
     if ($("spTerms")) window.SoulwareTerms.render($("spTerms"), { lang: lang, partner: P, plan: S.plan, updated: S.termsUpdated, final: S.termsFinal });
     loadResults(); bindCopy(); bindQuestions(); bindSign();
   }
-  window.addEventListener("hashchange", show);
+  window.onhashchange = show;   // (not addEventListener: the page may boot twice, see the loader)
 
   function bindCopy() {
     var b = $("spCopy"); if (!b) return;
@@ -297,14 +334,18 @@ function bootSpace() {
   fetch(S.endpoint + "?action=space&id=" + encodeURIComponent(S.id))
     .then(function (r) { return r.json(); })
     .then(function (live) {
-      if (done || !live || !live.found) return start();
+      if (!live || !live.found) return start();
+      var before = JSON.stringify([S.stage, S.signed, S.callAt, S.testSlug, S.plan]);
       if (live.stage) S.stage = live.stage;
       if (live.signed) S.signed = live.signed;
+      if (live.callAt) S.callAt = live.callAt;
       if (live.testSlug) S.testSlug = live.testSlug;
       if (live.plan) {
         S.plan = S.plan || {};
         Object.keys(live.plan).forEach(function (k) { if (live.plan[k]) S.plan[k] = live.plan[k]; });
       }
+      // the sheet answered after the page had already shown its fallback: redraw if anything differs
+      if (done) { if (JSON.stringify([S.stage, S.signed, S.callAt, S.testSlug, S.plan]) !== before) loadTest(S.testSlug, bootSpace); return; }
       loadTest(S.testSlug, start);
     })
     .catch(start);

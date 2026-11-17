@@ -109,8 +109,10 @@
 .sp-now .sp-booking { border-radius: 1rem; }
 .sp-terms-box { margin: 1rem 0 1.25rem; }
 .sp-terms-box summary { cursor: pointer; color: var(--sage-dark); font-weight: 500; }
-.sp-terms-box .legal__doc { max-width: none; margin-top: 1rem; }
-.sp-terms-box .legal__doc h1 { font-size: 1.4rem !important; }
+.sp-terms-box .legal__doc,
+.sp-terms-early .legal__doc { max-width: none; margin-top: 1rem; }
+.sp-terms-box .legal__doc h1,
+.sp-terms-early .legal__doc h1 { font-size: 1.4rem !important; }
 .sp-form input[type=text], .sp-form input[type=email] { width: 100%; }
 .sp-fold { background: #fff; border: 1px solid var(--border); border-radius: 1.1rem; padding: 1rem 1.25rem; }
 .sp-fold summary { cursor: pointer; font-weight: 500; color: var(--text); }
