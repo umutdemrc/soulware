@@ -364,10 +364,9 @@ img { display: block; max-width: 100%; }
   height: 4.5rem;
 }
 .swmark { display: inline-flex; align-items: center; gap: .625rem; text-decoration: none; }
-.swmark__glyph {
-  width: 2.25rem; height: 2.25rem; border-radius: .7rem; flex-shrink: 0;
-  box-shadow: 0 4px 10px -2px rgba(44,51,51,.25);
-}
+.swmark__glyph { width: 2.25rem; height: 2.25rem; flex-shrink: 0; color: var(--text); }
+.footer .swmark__glyph { color: #F4F2EB; }
+.footer .swmark__spark { fill: #B9CDB4; }
 .swmark__name { font-size: 1.25rem; font-weight: 500; color: var(--text); letter-spacing: -0.01em; }
 .site-nav__links { display: flex; align-items: center; gap: 1.75rem; }
 .site-nav__link { color: var(--text-secondary); text-decoration: none; font-size: .95rem; transition: color .2s; }
