@@ -59,7 +59,11 @@ function bootSpace() {
       launchTitle: "Nothing to do right now",
       launchSub: "We're building your app. Umut will email you previews before launch.",
       signedOn: "Signed on {d}.",
-      footer: "Private link. Please don't share it."
+      footer: "Private link. Please don't share it.",
+      insTitle: "What your followers ask you most",
+      insSub: "Gathered from the public comments under your most-watched posts. A small thank-you for reading, whatever you decide.",
+      insFold: "What your followers ask you most",
+      insBase: "Based on {b}."
     },
     tr: {
       privateFor: "{p} için özel alan",
@@ -105,7 +109,11 @@ function bootSpace() {
       launchTitle: "Şu an yapmanız gereken bir şey yok",
       launchSub: "Uygulamanızı geliştiriyoruz. Umut yayından önce size ön izlemeler gönderecek.",
       signedOn: "{d} tarihinde imzalandı.",
-      footer: "Özel bağlantı. Lütfen paylaşmayın."
+      footer: "Özel bağlantı. Lütfen paylaşmayın.",
+      insTitle: "Takipçilerinizin size en çok sorduğu şeyler",
+      insSub: "En çok izlenen paylaşımlarınızın altındaki herkese açık yorumlardan derledik. Kararınız ne olursa olsun, sizin için küçük bir teşekkür.",
+      insFold: "Takipçilerinizin size en çok sorduğu şeyler",
+      insBase: "Kaynak: {b}."
     }
   }[lang];
 
@@ -147,10 +155,24 @@ function bootSpace() {
 
   // ---------- the one card ----------
   function viewNow() {
-    if (stage === 1) return viewCall();
-    if (stage === 2) return viewTest();
-    if (stage === 3) return viewSign();
-    return card(T.launchTitle, T.launchSub, "");
+    if (stage === 1) return insights(false) + viewCall();
+    var ins = insights(true);
+    if (stage === 2) return viewTest() + ins;
+    if (stage === 3) return viewSign() + ins;
+    return card(T.launchTitle, T.launchSub, "") + ins;
+  }
+
+  // the gift: what their followers ask most, from public comments (window.SPACE.insights,
+  // written by tools/new_page.py --insights). First thing on step 1, a fold after that.
+  function insights(folded) {
+    var I = S.insights;
+    if (!I || !I.items || !I.items.length) return "";
+    var list = '<ol class="sp-ins__list">' + I.items.map(function (it, i) {
+      return '<li class="sp-ins__item"><span class="sp-card__num">' + (i + 1) + "</span><div><b>" + esc(it.q) + "</b>" +
+        (it.quotes || []).map(function (q) { return '<p class="sp-ins__quote">“' + esc(q) + "”</p>"; }).join("") + "</div></li>";
+    }).join("") + "</ol>" + (I.basedOn ? '<p class="sp-small">' + esc(fill(T.insBase, { b: I.basedOn })) + "</p>" : "");
+    if (folded) return '<details class="sp-extra sp-fold"><summary>' + esc(T.insFold) + "</summary>" + list + "</details>";
+    return '<section class="sp-ins"><h2>' + esc(T.insTitle) + '</h2><p class="sp-muted">' + esc(T.insSub) + "</p>" + list + "</section>";
   }
 
   // the booked call, shown in the partner's own time zone

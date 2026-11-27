@@ -117,3 +117,13 @@
 .sp-fold { background: #fff; border: 1px solid var(--border); border-radius: 1.1rem; padding: 1rem 1.25rem; }
 .sp-fold summary { cursor: pointer; font-weight: 500; color: var(--text); }
 .sp-fold[open] summary { margin-bottom: .6rem; }
+
+/* the gift card: what their followers ask most */
+.sp-ins { background: linear-gradient(135deg, rgba(139,168,136,.16), rgba(212,145,126,.10)); border-radius: 1.5rem; padding: 1.75rem; margin-bottom: 1.75rem; }
+.sp-ins h2 { font-family: var(--font-display); font-weight: 500; font-size: 1.6rem; margin: 0 0 .5rem; color: var(--text); }
+.sp-ins__list { list-style: none; padding: 0; margin: 0 0 .75rem; display: grid; gap: .75rem; }
+.sp-ins__item { display: flex; gap: .85rem; align-items: flex-start; background: #fff; border: 1px solid var(--border); border-radius: 1.1rem; padding: 1rem 1.1rem; }
+.sp-ins__item .sp-card__num { flex: none; margin: 0; }
+.sp-ins__item b { display: block; color: var(--text); font-weight: 500; line-height: 1.45; margin-bottom: .3rem; }
+.sp-ins__quote { margin: .25rem 0 0; color: var(--text-secondary); font-size: .9rem; line-height: 1.55; font-style: italic; }
+.sp-fold .sp-ins__list { margin-top: 1rem; }
